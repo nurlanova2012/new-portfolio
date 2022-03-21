@@ -1,0 +1,26 @@
+@import "../../scss/vars";
+@import "../../scss/media";
+
+.item {
+  color: $font-color;
+  font-size: 15px;
+  margin-right: 40px;
+  padding: 7px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  @include media(430) {
+    margin-right: 0;
+    font-size: 14px;
+  }
+
+
+  &--active {
+    background-color: $secondary-color;
+    color: $light;
+
+    @include media(430) {
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import "../../scss/vars";
+@import "../../scss/media";
+
+.contacts {
+  height: 100vh;
+  padding: 0 0 0 50px;
+
+  &__content {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    padding-left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media(900) {
+      margin: 0 auto;
+      padding: 0 30px 30px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-self: center;
+      width: 70%;
+
+      @include media(900) {
+        margin: 0 auto;
+        width: 95%;
+      }
+
+      input {
+        height: 30px;
+        font-size: 14px;
+        padding: 5px;
+        margin-bottom: 15px;
+        border: 1px solid $bg-color;
+      }
+
+      textarea {
+        height: 200px;
+        font-size: 14px;
+        padding: 5px;
+        margin-bottom: 15px;
+        border: 1px solid $bg-color;
+        border-radius: 4px;
+        resize: none;
+      }
+
+      button {
+        margin-bottom: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 0;
+        background-color: $accent-color;
+        color: $light;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+
+      span {
+        padding: 10px 30px;
+        background-color: $contact;
+        text-align: center;
+        border-radius: 4px;
+      }
+    }
+    &::before {
+      position: absolute;
+      width: 40%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: "";
+      background-image: url(../../assets/images/photo-1557200134-90327ee9fafa.jpeg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @include media(900) {
+        display: none;
+      }
+    }
+  }
+}

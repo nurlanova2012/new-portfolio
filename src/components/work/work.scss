@@ -1,0 +1,153 @@
+@import "../../scss/vars";
+@import "../../scss/media";
+
+.work {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__slider {
+    height: 350px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 0.9s ease-out;
+
+    @include media(800) {
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__slider-inner {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__slider-item {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    background-color: $accent-color;
+    border-radius: 15px;
+
+    @include media(800) {
+      width: 90%;
+      height: 150px;
+      margin: 5px 0;
+      overflow: hidden;
+    }
+  }
+  &__slider-left {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media(800) {
+      flex: 6;
+    }
+  }
+
+  &__slider-left-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 20px;
+
+      @include media(800) {
+        margin: 0;
+      }
+
+      @include media(700) {
+        margin-bottom: 15px;
+      }
+    }
+    p {
+      font-size: 13px;
+
+      @include media(700) {
+        display: none;
+      }
+    }
+
+    span {
+      align-self: center;
+      font-size: 12px;
+      font-weight: 600;
+      border-bottom: 1px solid $accent-color;
+    }
+  }
+  &__slider-right {
+    flex: 8;
+    height: 100%;
+    overflow: hidden;
+
+    @include media(800) {
+      flex: 6;
+    }
+
+    img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+  &__slider-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: $secondary-color;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include media(800) {
+      display: none;
+    }
+  }
+
+  &__slider-arrow {
+    width: 100%;
+    height: 100%;
+    color: $light;
+  }
+  &__slider-btn-prev {
+    left: 15%;
+
+    @include media(1024) {
+      left: 6%;
+    }
+    .work__slider-arrow {
+      margin-left: 8px;
+    }
+  }
+  &__slider-btn-next {
+    right: 15%;
+
+    @include media(1024) {
+      right: 6%;
+    }
+    .work__slider-arrow {
+      margin-left: 6px;
+    }
+  }
+}

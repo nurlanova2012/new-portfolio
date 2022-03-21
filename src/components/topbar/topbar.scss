@@ -1,0 +1,88 @@
+@import "../../scss/vars";
+@import "../../scss/media";
+
+.topbar {
+  background-color: $bg-color;
+  position: fixed;
+  width: 100%;
+  min-height: 70px;
+  color: $light;
+  transition: all 0.9s ease;
+  z-index: 2;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    background-color: $light;
+    border-radius: 6px;
+    padding: 5px 20px;
+    margin-right: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: $bg-color;
+    text-decoration: none;
+
+    @include media(500) {
+      font-size: 2px;
+    }
+  }
+  &__contact-item {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+
+    @include media(800) {
+      display: none;
+    }
+
+    .topbar__icon {
+      margin-right: 5px;
+      font-size: 1.8rem;
+
+    }
+    span {
+      font-size: 1.2rem;
+    }
+  }
+  &__nav-toggler {
+    width: 40px;
+    height: 40px;
+    margin-top: 4px;
+    padding: 10px;
+    background-image: url(../../assets/images/hamburger.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+  }
+
+  &--active {
+    background-color: $accent-color;
+    color: $font-color;
+
+    & .topbar__nav-toggler {
+      background-color: $light;
+      background-image: url(../../assets/images/cross.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 25px;
+      background-color: $light;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+    }
+  }
+}
